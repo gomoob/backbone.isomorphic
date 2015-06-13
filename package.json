@@ -35,6 +35,7 @@
   },
   "scripts" : {
       "postinstall" : "cp postinstall/gulp-replace.js node_modules/gulp-replace/index.js",
-      "postinstall" : "node postinstall/overwrite-backbone.js"
+      "postinstall" : "node postinstall/overwrite-backbone.js",
+      "postinstall" : "node postinstall/overwrite-marionette.js"
   }
 }

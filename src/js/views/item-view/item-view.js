@@ -60,47 +60,6 @@ module.exports = Mn.ItemView.extend(
             var counter = parseInt(this.ui.counter.text());
             this.ui.counter.text(counter + 1);
 
-        },
-
-        ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-        // TODO: Move those functions into an 'Mn.IsomorphicItemView' class
-        ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-        constructor: function() {
-
-            this._serverSide = Mn.serverSide === true;
-
-            Mn.View.apply(this, arguments);
-        
-        },
-        
-        _ensureElement: function() {
-
-            Backbone.View.prototype._ensureElement.apply(this, arguments);
-            
-            this.$el.attr('data-server-side', true);
-            
-        },
-
-        render: function() {
-            
-            // Server side rendering is very simple
-            if(this._serverSide) {
-          
-                this._renderTemplate();
-                this.isRendered = true;
-
-                this.onRenderServerSide();
-
-            } 
-            
-            // Standard Marionette ItemView rendering
-            else {
-            
-                Mn.ItemView.prototype.render.apply(this, arguments);
-
-            }
-
-            return this;
         }
 
     }

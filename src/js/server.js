@@ -18,12 +18,14 @@ global.document = window.document;
 // global.document = jsdom(require('./app.tpl'), {});
 // global.window = document.defaultView;
 
-// This has to be done after document creation with Domino because jQuery expects a document to be available to be 
-// initialized
+// This has to be done after document creation with Domino or Jsdom because jQuery expects a document to be available to 
+// be initialized
 global.$ = require('jquery');
 
-Mn = require('backbone.marionette');
-Mn.serverSide = true;
+// The 'Backbone.isomorphic' parameter allows to indicate that we need server side rendering. This boolean is false in 
+// a browser environment.
+Backbone = require('backbone');
+Backbone.isomorphic = true;
 
 var express = require('express');
 var app = express();
