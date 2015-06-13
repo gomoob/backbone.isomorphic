@@ -2,7 +2,7 @@
 
 # Setup
 
-Please follow the following indications one by one.
+Please follow those indications one by one.
 
 ## Required tools
 
@@ -20,8 +20,8 @@ npm install
 
 ## Backbone
 
-The project used Backbone Marionette 2.4.1 which depends on Backbone 1.1.2, their is a problem in the UMD module code 
-associated to Backbone which prevents the project to work. 
+The project uses Backbone Marionette 2.4.1 which depends on Backbone 1.1.2, their is a problem in the UMD module code 
+associated to Backbone because it prevents the project to work with jQuery. 
 
 The problem is that by default Backbone is configured to not use jQuery when its loaded in a Node environment. So to 
 make it work we have to replace the following in `node_modules/backbone.marionette/node_modules/backbone.js` (line 20) : 
