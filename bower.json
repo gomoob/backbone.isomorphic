@@ -1,0 +1,46 @@
+{
+    "name": "backbone.isomorphic",
+    "description" : "Backbone and Marionette isomorphic Proof Of Concepts.",
+    "version" : "0.1.0",
+    "license": "MIT",
+    "homepage": "https://github.com/gomoob/backbone.isomorphic",
+    "authors": [
+        {
+            "name" : "Baptiste Gaillard", 
+            "email" : "baptiste.gaillard@gomoob.com"
+        }
+    ],
+    "keywords" : [
+        "backbone",
+	    "marionette",
+	    "isomorphic",
+	    "server",
+	    "server-side",
+	    "jsdom",
+	    "domino",
+	    "express"
+    ],
+    "main" : [
+        "dist/backbone.isomorphic.min.js"
+    ],
+    "ignore": [
+        "reports",
+        "test",
+        ".gitignore",
+        ".jshintrc", 
+        ".npmignore",
+        ".project",
+        ".travis.yml",
+        "Gruntfile.js",
+        "package.json"
+    ],
+    "dependencies": {
+        "backbone": "1.0.0 - 1.1.2",
+        "backbone.marionette": "^2.4.1",
+        "bootstrap": "^3.3.4",
+        "bootstrap-material-design": "^0.3.0",
+        "jquery": "^2.1.4",
+        "underscore": "1.4.4 - 1.6.0"
+    },
+    "devDependencies": {}
+}

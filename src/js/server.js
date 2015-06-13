@@ -24,6 +24,7 @@ global.$ = require('jquery');
 
 var express = require('express');
 var app = express();
+app.use('/bower_components', express.static('./bower_components'));
 
 app.get(
     '/', 

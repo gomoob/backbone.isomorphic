@@ -6,7 +6,8 @@ gulp.task(
     function () {
         nodemon(
             {
-                script: 'src/js/server.js', 
+                cwd: 'src/js',
+                script: 'server.js', 
                 ext: 'js html', 
                 env: { 
                     'NODE_ENV': 'development' 

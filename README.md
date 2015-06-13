@@ -1,4 +1,4 @@
-> Marionette isomorphinc Proof Of Concepts
+> Backbone and Marionette isomorphic Proof Of Concepts
 
 # Setup
 

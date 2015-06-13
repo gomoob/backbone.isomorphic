@@ -12,9 +12,14 @@ module.exports = Mn.LayoutView.extend(
         
         onRender : function() {
             
-            this.sampleRegion.show(new Mn.ItemView({
-                template: _.template('Hello !')
-            }));
+            this.sampleRegion.show(
+                new Mn.ItemView(
+                    {
+                        className : 'well',
+                        template: _.template('<p>I\'m a Marionette view rendered on server side inside a region !</p>')
+                    }
+                )
+            );
             
         }
     }
