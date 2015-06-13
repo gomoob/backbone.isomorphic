@@ -22,9 +22,14 @@ global.document = window.document;
 // initialized
 global.$ = require('jquery');
 
+Mn = require('backbone.marionette');
+Mn.serverSide = true;
+
 var express = require('express');
 var app = express();
+app.use('/client.js', express.static('./client.js'));
 app.use('/bower_components', express.static('./bower_components'));
+app.use('/views', express.static('./views'));
 
 app.get(
     '/', 

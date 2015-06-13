@@ -27,6 +27,14 @@
   },
   "devDependencies": {
     "gulp": "^3.8.11",
-    "gulp-nodemon": "^2.0.3"
+    "gulp-nodemon": "^2.0.3",
+    "gulp-preprocess": "^1.2.0",
+    "gulp-replace": "^0.5.3",
+    "gulp-replace-path": "^0.4.0",
+    "html-minifier": "^0.7.2"
+  },
+  "scripts" : {
+      "postinstall" : "cp postinstall/gulp-replace.js node_modules/gulp-replace/index.js",
+      "postinstall" : "node postinstall/overwrite-backbone.js"
   }
 }
