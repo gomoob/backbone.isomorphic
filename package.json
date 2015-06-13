@@ -1,0 +1,29 @@
+{
+  "name": "backbone.isomorphic",
+  "version": "0.1.0",
+  "description": "Create isomorphinc applications using Backbone and Marionette !",
+  "main": "server.js",
+  "repository": "gomoob/backbone.isomorphic",
+  "keywords": [
+    "backbone",
+    "marionette",
+    "isomorphic",
+    "server",
+    "server-side"
+  ],
+  "author": "Baptiste GAILLARD (baptiste.gaillard@gomoob.com)",
+  "license": "MIT",
+  "dependencies": {
+    "backbone": "1.0.0 - 1.1.2",
+    "backbone.marionette": "^2.4.1",
+    "domino": "^1.0.18",
+    "express": "^4.12.4",
+    "jquery": "^2.1.4",
+    "jsdom": "^3.1.2",
+    "underscore": "1.4.4 - 1.6.0"
+  },
+  "devDependencies": {
+    "gulp": "^3.8.11",
+    "gulp-nodemon": "^2.0.3"
+  }
+}
