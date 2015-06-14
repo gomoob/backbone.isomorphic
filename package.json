@@ -21,6 +21,7 @@
     "backbone.marionette": "^2.4.1",
     "domino": "^1.0.18",
     "express": "^4.12.4",
+    "fs-extra": "^0.19.0",
     "jquery": "^2.1.4",
     "jsdom": "^3.1.2",
     "underscore": "1.4.4 - 1.6.0"
@@ -31,11 +32,10 @@
     "gulp-preprocess": "^1.2.0",
     "gulp-replace": "^0.5.3",
     "gulp-replace-path": "^0.4.0",
+    "gulp-watch": "^4.2.4",
     "html-minifier": "^0.7.2"
   },
   "scripts" : {
-      "postinstall" : "cp postinstall/gulp-replace.js node_modules/gulp-replace/index.js",
-      "postinstall" : "node postinstall/overwrite-backbone.js",
-      "postinstall" : "node postinstall/overwrite-marionette.js"
+      "postinstall" : "node postinstall/postinstall.js"
   }
 }

@@ -1,6 +1,6 @@
 var fs = require('fs')
 
-var overwriteMarionette = function(path) {
+module.exports = function(path) {
     
     var data = fs.readFileSync(path, 'utf8'), 
         write = false;
@@ -32,5 +32,3 @@ var overwriteMarionette = function(path) {
     }
 
 };
-
-overwriteMarionette('node_modules/backbone.marionette/lib/backbone.marionette.js');

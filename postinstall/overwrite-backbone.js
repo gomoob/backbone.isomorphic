@@ -1,6 +1,6 @@
 var fs = require('fs')
 
-var overwriteBackbone = function(path) {
+module.exports = function(path) {
     
     var data = fs.readFileSync(path, 'utf8'), 
         write = false;
@@ -91,6 +91,3 @@ var overwriteBackbone = function(path) {
     }
 
 };
-
-overwriteBackbone('node_modules/backbone/backbone.js');
-overwriteBackbone('node_modules/backbone.marionette/node_modules/backbone/backbone.js');
