@@ -1,6 +1,8 @@
-> Backbone and Marionette isomorphic Proof Of Concepts
+# backbone.isomorphic
 
-# Quick start
+> Isomorphic Backbone and Marionette
+
+## Quick start
 
 Install and setup the following tools : 
  * [node.js](https://nodejs.org "node.js") or [io.js](https://iojs.org "io.js")
@@ -12,26 +14,26 @@ npm install
 gulp init
 ```
 
-Then run `gulp serve` and open http://localhost:3000 in your browser, you'll see a demo with Backbone and Marionette 
-isomorphic application ;-)
+Then run `gulp serve` and open [http://localhost:3000](http://localhost:3000 "demo") in your browser, you'll see a 
+Backbone and Marionette isomorphic application demo ;-)
 
-# Using isomorphic Backbone / isomorphic Marionette
+## Using isomorphic Backbone / Marionette
 
-## The `Backbone.isomorphic` parameter
-
-**TODO**
-
-## Make node.js require work with templates
+### The `Backbone.isomorphic` parameter
 
 **TODO**
 
-# How does it work ? 
-
-## Server side DOM rendering
+### Make node.js require work with templates
 
 **TODO**
 
-## Library overwrites
+## How does it work ? 
+
+### Server side DOM rendering
+
+**TODO**
+
+### Library overwrites
 
 backbone.isomorphic provides npm postinstall scripts which overwrites the `backbone.js` and `marionette.js` library 
 files. The advantage of this method is that you can continue to use standard Backbone and Marionette in your projects, 
@@ -44,18 +46,18 @@ dynamically modified :
 
 The following sections describes the modifications which are applied in those files.
 
-### backbone.js
+#### backbone.js
 
 **TODO**
 
-### marionette.js
+#### marionette.js
 
 **TODO**
 
 
-# Gulp tasks
+## Gulp tasks
 
-## Pull bower dependencies
+### Pull bower dependencies
 
 Pull bower dependencies using the following command.
 
@@ -63,7 +65,7 @@ Pull bower dependencies using the following command.
 bower update
 ```
 
-## Creates bundle.js file
+### Creates bundle.js file
 
 The project uses Browserify to create a bundled application javascript file in `src/client/bundle.js`.
 
@@ -71,7 +73,7 @@ The project uses Browserify to create a bundled application javascript file in `
 gulp browserify
 ```
 
-## Start the server
+### Start the server
 
 Use the following command to start a test server and go to http://localhost:3000 to see the results. 
 
