@@ -1,4 +1,5 @@
-var browserify = require('browserify'),
+var bower = require('gulp-bower');
+    browserify = require('browserify'),
     glob = require('glob'),
     gulp = require('gulp'),
     gutil = require('gulp-util');
@@ -11,6 +12,14 @@ var browserify = require('browserify'),
     path = require('path'), 
     watchify = require('watchify');
 
+gulp.task('init', ['bower', 'browserify']);
+
+gulp.task('bower', function() {
+   
+    return bower().pipe(gulp.dest('src/client/bower_components'))
+    
+});
+    
 /**
  * Task used to create the client Javascript file using Browserify. The produced file will be stored in 
  * 'src/client/bundle.js'.

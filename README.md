@@ -1,49 +1,19 @@
 > Backbone and Marionette isomorphic Proof Of Concepts
 
-# Sample Setup
-
-Please follow those indications one by one.
-
-## Required tools
+# Quick start
 
 Install and setup the following tools : 
- * node.js or io.js
- * gulp
- * bower
- 
-## Pull node dependencies
+ * [node.js](https://nodejs.org "node.js") or [io.js](https://iojs.org "io.js")
+ * [Gulp](http://gulpjs.com "gulp.js")
 
-Pull node.js dependencies using the following command.
-
+Run the following commands to initialize the project.
 ```
 npm install
+gulp init
 ```
 
-## Pull bower dependencies
-
-Pull bower dependencies using the following command.
-
-```
-bower update
-```
-
-## Creates bundle.js file
-
-The project uses Browserify to create a bundled application javascript file in `src/client/bundle.js`.
-
-```
-gulp browserify
-```
-
-## Start the server
-
-Use the following command to start a test server and go to http://localhost:3000 to see the results. 
-
-```
-gulp serve
-```
-
-Great Backbone and Marionette views rendered server side ;-) !
+Then run `gulp serve` and open http://localhost:3000 in your browser, you'll see a demo with Backbone and Marionette 
+isomorphic application ;-)
 
 # Using isomorphic Backbone / isomorphic Marionette
 
@@ -81,3 +51,32 @@ The following sections describes the modifications which are applied in those fi
 ### marionette.js
 
 **TODO**
+
+
+# Gulp tasks
+
+## Pull bower dependencies
+
+Pull bower dependencies using the following command.
+
+```
+bower update
+```
+
+## Creates bundle.js file
+
+The project uses Browserify to create a bundled application javascript file in `src/client/bundle.js`.
+
+```
+gulp browserify
+```
+
+## Start the server
+
+Use the following command to start a test server and go to http://localhost:3000 to see the results. 
+
+```
+gulp serve
+```
+
+Great Backbone and Marionette views rendered server side ;-) !

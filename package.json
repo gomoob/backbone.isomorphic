@@ -29,7 +29,8 @@
   "devDependencies": {
     "browserify": "^10.2.4",
     "glob": "^5.0.10",
-    "gulp": "^3.8.11",
+    "gulp": "^3.9.0",
+    "gulp-bower": "0.0.10",
     "gulp-nodemon": "^2.0.3",
     "gulp-preprocess": "^1.2.0",
     "gulp-replace": "^0.5.3",
@@ -41,7 +42,7 @@
     "vinyl-transform": "^1.0.0",
     "watchify": "^3.2.2"
   },
-  "scripts" : {
-      "postinstall" : "node postinstall/postinstall.js"
+  "scripts": {
+    "postinstall": "node postinstall/postinstall.js"
   }
 }
