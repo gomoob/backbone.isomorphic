@@ -37,14 +37,7 @@
         </div>
     </body>
     
-    <!-- Javascript dependencies -->
-    <script type="text/javascript" src="bower_components/jquery/dist/jquery.js"></script>
-    <script type="text/javascript" src="bower_components/underscore/underscore.js"></script>
-    <script type="text/javascript" src="bower_components/backbone/backbone.js"></script>
-    <script type="text/javascript" src="bower_components/backbone.marionette/lib/backbone.marionette.js"></script>
-    <script type="text/javascript" src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
-    
-    <!-- Application dependencies -->
-    <script type="text/javascript" src="client.js"></script>
+    <!-- Application Browserify Bundle -->
+    <script type="text/javascript" src="bundle.js"></script>
 
 </html>

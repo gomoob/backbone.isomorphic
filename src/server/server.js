@@ -29,17 +29,17 @@ Backbone.isomorphic = true;
 
 var express = require('express');
 var app = express();
-app.use('/client.js', express.static('./client.js'));
-app.use('/bower_components', express.static('./bower_components'));
-app.use('/views', express.static('./views'));
+app.use('/bundle.js', express.static('../client/bundle.js'));
+app.use('/bower_components', express.static('../client/bower_components'));
+app.use('/views', express.static('../common/views'));
 
 app.get(
     '/', 
     function (req, res) {
 
-        var BackboneView = require('./views/backbone-view/backbone-view');
-        var ItemView = require('./views/item-view/item-view');
-        var LayoutView = require('./views/layout-view/layout-view');
+        var BackboneView = require('../common/views/backbone-view/backbone-view');
+        var ItemView = require('../common/views/item-view/item-view');
+        var LayoutView = require('../common/views/layout-view/layout-view');
         
         // Test with a simple Backbone.View
         var backboneView = new BackboneView({ el : '#backbone-view' });

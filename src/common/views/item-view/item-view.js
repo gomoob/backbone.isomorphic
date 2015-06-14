@@ -37,7 +37,7 @@ module.exports = Mn.ItemView.extend(
          */
         onRenderServerSide : function() {
 
-            console.log('Server side rendering.');
+            console.log('Server side rendering ;-)');
 
         },
 
@@ -46,7 +46,7 @@ module.exports = Mn.ItemView.extend(
          */
         onRender : function() {
 
-            console.log('Client side rendering.');
+            console.log('Client side rendering ;-)');
 
         },
         

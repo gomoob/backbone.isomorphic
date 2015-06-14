@@ -1,9 +1,39 @@
-var gulp = require('gulp');
-var minify = require('html-minifier').minify;
-var nodemon = require('gulp-nodemon');
-var replace = require('gulp-replace');
-var fs = require('fs');
-var path = require('path');
+var browserify = require('browserify'),
+    glob = require('glob'),
+    gulp = require('gulp'),
+    gutil = require('gulp-util');
+    minify = require('html-minifier').minify,
+    nodemon = require('gulp-nodemon'),
+    replace = require('gulp-replace'),
+    source = require('vinyl-source-stream'),
+    transform = require('vinyl-transform'),
+    fs = require('fs'),
+    path = require('path'), 
+    watchify = require('watchify');
+
+/**
+ * Task used to create the client Javascript file using Browserify. The produced file will be stored in 
+ * 'src/client/bundle.js'.
+ */
+gulp.task(
+    'browserify', 
+    ['inline-templates'], 
+    function() {
+        
+        return browserify(
+            {
+                entries: ['tmp/bootstrap.js'],
+                debug: true
+            }
+        ).bundle()
+        
+        // Log errors if they happen
+        .on('error', gutil.log.bind(gutil, 'Browserify Error'))
+        .pipe(source('bundle.js'))
+        .pipe(gulp.dest('src/client'));
+        
+    }
+);
 
 /**
  * Task used to inspect all "require('*.tpl')" calls in the source code and replace those calls by a string with the 
@@ -12,9 +42,10 @@ var path = require('path');
 gulp.task(
     'inline-templates', 
     function() {
-        gulp.src(['src/js/views/**/*.js'])
-            .pipe(replace(/require\(\'.*\.tpl\'\)/g, function(toBeReplaced, file) {
-                
+        
+        var stream = gulp.src(['src/common/views/**/*.js'])
+                         .pipe(replace(/require\(\'.*\.tpl\'\)/g, function(toBeReplaced, file) {
+
                 // Extracts the template relative path
                 var tplRelativePath = toBeReplaced.substring(9); 
                 tplRelativePath = tplRelativePath.substring(0, tplRelativePath.length - 2);
@@ -41,6 +72,9 @@ gulp.task(
 
             }))
             .pipe(gulp.dest('./tmp/views'));
+        
+        return stream;
+
     }
 );
 
@@ -49,7 +83,7 @@ gulp.task(
     function () {
         nodemon(
             {
-                cwd: 'src/js',
+                cwd: 'src/server',
                 script: 'server.js', 
                 ext: 'js html', 
                 env: { 
@@ -59,3 +93,37 @@ gulp.task(
         );
     }
 );
+
+gulp.task(
+    'watch', 
+    function() {
+        
+        var templateWatcher = gulp.watch('src/common/views/**/*', ['inline-templates']);
+        
+        var browserified = browserify(
+            {
+                entries: ['tmp/bootstrap.js'],
+                debug: true
+            }
+        );
+        var watchifiedBrowserified = watchify(browserified); 
+        var watchifiedBrowserifiedBundle = createBundle(); 
+
+        watchifiedBrowserified.on('update', createBundle); 
+        watchifiedBrowserified.on('log', gutil.log);
+        
+        function createBundle() {
+        
+            return watchifiedBrowserified
+                .bundle()
+                    
+                // Log errors if they happen
+                .on('error', gutil.log.bind(gutil, 'Browserify Error'))
+                .pipe(source('bundle.js'))
+                .pipe(gulp.dest('src/client'));
+
+        }
+
+    }
+);
+

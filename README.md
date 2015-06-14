@@ -10,7 +10,6 @@ Install and setup the following tools :
  * node.js or io.js
  * gulp
  * bower
- * browserify
  
 ## Pull node dependencies
 
@@ -28,16 +27,13 @@ Pull bower dependencies using the following command.
 bower update
 ```
 
-## Produce the client.js file
+## Creates bundle.js file
 
-Enter the following commands to create a `src/js/client.js` file using browserify.
+The project uses Browserify to create a bundled application javascript file in `src/client/bundle.js`.
 
 ```
-gulp inline-templates
-browserify tmp/views/item-view/item-view.js tmp/bootstrap.js > src/js/client.js
+gulp browserify
 ```
-
-*TODO: Create a gulp watch task to automatically update the file.*
 
 ## Start the server
 
