@@ -6,8 +6,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <!-- CSS dependencies -->
-        <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css"></link>
-        <link rel="stylesheet" href="bower_components/bootstrap-material-design/dist/css/material.css"></link>
+        <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.css"></link>
+        <link rel="stylesheet" href="/bower_components/bootstrap-material-design/dist/css/material.css"></link>
 
     </head>
     <body style="background: white;">
@@ -38,6 +38,6 @@
     </body>
     
     <!-- Application Browserify Bundle -->
-    <script type="text/javascript" src="bundle.js"></script>
+    <script type="text/javascript" src="/bundle.js"></script>
 
 </html>

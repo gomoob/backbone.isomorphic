@@ -3,9 +3,11 @@
         Sample Marionette ItemView
     </div>
     <div class="panel-body">
-        
-        <p>I'm rendered on server side ;-)</p>
 
+        <p><%= name %></p>
+        <p><%= description %></p>
+
+        <p>I'm rendered on server side ;-)</p>
     
         <p>
             Button bound on client side : 

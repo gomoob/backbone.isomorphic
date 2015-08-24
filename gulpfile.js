@@ -16,7 +16,7 @@ gulp.task('init', ['bower', 'browserify']);
 
 gulp.task('bower', function() {
    
-    return bower().pipe(gulp.dest('src/client/bower_components'))
+    return bower().pipe(gulp.dest('src/js/client/bower_components'))
     
 });
     
@@ -39,7 +39,7 @@ gulp.task(
         // Log errors if they happen
         .on('error', gutil.log.bind(gutil, 'Browserify Error'))
         .pipe(source('bundle.js'))
-        .pipe(gulp.dest('src/client'));
+        .pipe(gulp.dest('src/js/client'));
         
     }
 );
@@ -52,7 +52,7 @@ gulp.task(
     'inline-templates', 
     function() {
         
-        var stream = gulp.src(['src/common/views/**/*.js'])
+        var stream = gulp.src(['src/js/common/views/**/*.js'])
                          .pipe(replace(/require\(\'.*\.tpl\'\)/g, function(toBeReplaced, file) {
 
                 // Extracts the template relative path
@@ -92,7 +92,7 @@ gulp.task(
     function () {
         nodemon(
             {
-                cwd: 'src/server',
+                cwd: 'src/js/server',
                 script: 'server.js', 
                 ext: 'js html', 
                 env: { 
@@ -107,7 +107,7 @@ gulp.task(
     'watch', 
     function() {
         
-        var templateWatcher = gulp.watch('src/common/views/**/*', ['inline-templates']);
+        var templateWatcher = gulp.watch('src/js/common/views/**/*', ['inline-templates']);
         
         var browserified = browserify(
             {
@@ -129,7 +129,7 @@ gulp.task(
                 // Log errors if they happen
                 .on('error', gutil.log.bind(gutil, 'Browserify Error'))
                 .pipe(source('bundle.js'))
-                .pipe(gulp.dest('src/client'));
+                .pipe(gulp.dest('src/js/client'));
 
         }
 

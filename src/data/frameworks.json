@@ -1,0 +1,32 @@
+[
+    {
+        "name" : "backbone.marionette", 
+        "description" : "The Backbone Framework",
+        "version" : "2.4.2", 
+        "stars" : 6409
+    },
+    {
+        "name" : "rendr",               
+        "description" : "Render your Backbone.js apps on the client and the server, using Node.js.", 
+        "version" : "1.1.2", 
+        "stars" : 3915
+    },
+    {
+        "name" : "chaplin",             
+        "description" : "HTML5 application architecture using Backbone.js",
+        "version" : "1.0.0", 
+        "stars" : 2935
+    },
+    {
+        "name" : "Backbone-relational",             
+        "description" : "Get and set relations (one-to-one, one-to-many, many-to-one) for Backbone models",
+        "version" : "0.10.0", 
+        "stars" : 2366
+    },
+    {
+        "name" : "backbone-forms",
+        "description" : "Form framework for BackboneJS with nested forms, editable lists and validation",
+        "version" : "0.14.0",
+        "stars" : 2113
+    }
+]
